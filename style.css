@@ -2,31 +2,50 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #081c15;
-    color: white;
     font-family: monospace;
+}
+
+:root {
+    --background-color: #081c15;
+    --text-color: white;
+    --highlight-color: #8146e7;
+    --nav-text-color: #b6f112;
+}
+
+[data-theme="light"] {
+    --background-color: #aedb8f;
+    --text-color: #081c15;
+    --highlight-color: #6028b0;
+    --nav-text-color: #313da7;
 }
 
 body {
     margin: 0;
     padding: 0;
     justify-content: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
+
 .highlight {
-    color: #8146e7;
+    color: var(--highlight-color);
 }
 
 .container {
-    width: 800px;
+    width: 90%;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     font-size: 1.5em;
 }
+
 nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
+    padding: 0 20px;
+    position: relative;
 }
 
 nav ul{
@@ -34,14 +53,16 @@ nav ul{
     list-style: none;
     justify-content: center;
 }
+
 nav ul li{
     margin: 0 23px;
-    color: #b6f112;
+    color: var(--nav-text-color);
     font-size: 1.7em;
     cursor: pointer;
 }
+
 nav ul li:hover{
-    color: #8146e7;
+    color: var(--highlight-color);
 }
 
 h1 {
@@ -74,14 +95,104 @@ p {
 }
 
 a {
-    color: #b6f112;
+    color: var(--nav-text-color);
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: var(--background-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .spotify-status {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .spotify-status img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 480px) {
     .container {
-        max-width: 75%;
-        font-size: small;
+        width: 95%;
+        font-size: 1em;
+    }
 
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Add hamburger menu styles */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--nav-text-color);
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+@media (min-width: 769px) {
+    nav ul {
+        display: flex !important;
     }
 }
