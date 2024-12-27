@@ -13,10 +13,11 @@
 }
 
 [data-theme="light"] {
-    --background-color: #aedb8f;
-    --text-color: #081c15;
-    --highlight-color: #6028b0;
-    --nav-text-color: #313da7;
+    /* --background-color: #ffe97f; */
+    --background-color: #fff8a5;
+    --text-color: #000000;
+    --highlight-color: #6733e0;
+    --nav-text-color: #2632db;
 }
 
 body {
@@ -120,10 +121,11 @@ a {
         align-items: center;
         padding: 20px 0;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
     }
 
     nav ul.show {
-        display: flex;
+        display: flex !important;
     }
 
     nav ul li {
@@ -189,6 +191,13 @@ a {
     color: var(--nav-text-color);
     font-size: 1.5em;
     padding: 5px;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
 }
 
 @media (min-width: 769px) {
