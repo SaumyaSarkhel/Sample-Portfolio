@@ -37,7 +37,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 25px;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 nav{
@@ -58,7 +58,7 @@ nav ul{
 nav ul li{
     margin: 0 23px;
     color: var(--nav-text-color);
-    font-size: 1.7em;
+    font-size: 1.5em;
     cursor: pointer;
 }
 
@@ -88,13 +88,13 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
-    margin-top: 20px;
+    font-size: 1.6em;
+    margin-top: 40px;
     margin-bottom: 15px;
 }
 
 p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .spotify-status {
