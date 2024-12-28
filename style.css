@@ -14,7 +14,7 @@
 
 [data-theme="light"] {
     /* --background-color: #ffe97f; */
-    --background-color: #fff8a5;
+    --background-color: #FCFFC1;
     --text-color: #000000;
     --highlight-color: #6733e0;
     --nav-text-color: #2632db;
@@ -36,7 +36,7 @@ body {
     width: 90%;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px;
     font-size: 1.5em;
 }
 
@@ -62,8 +62,24 @@ nav ul li{
     cursor: pointer;
 }
 
-nav ul li:hover{
+nav ul li:hover {
     color: var(--highlight-color);
+    transform: scale(1.05);
+    transition: transform 0.1s ease;
+}
+
+[data-theme="light"] nav ul li:hover {
+    color: #6733e0;
+    transform: scale(1.05);
+    transition: transform 0.1s ease;
+    text-decoration: underline;
+}
+
+[data-theme="dark"] nav ul li:hover {
+    color: #b6f112;
+    transform: scale(1.05);
+    transition: transform 0.1s ease;
+    text-decoration: underline;
 }
 
 h1 {
